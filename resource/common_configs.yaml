@@ -1,0 +1,6 @@
+browser:
+  chrome: chrome
+  firefox: firefox
+
+base_url:
+  phptravels: https://www.phptravels.net/login

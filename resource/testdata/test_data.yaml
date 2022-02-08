@@ -1,0 +1,9 @@
+username:
+  valid: user@phptravels.com
+  invalid: aaaa@phptravels.com
+  empty: " "
+
+password:
+  valid: demouser
+  invalid: sssmouser
+  empty: " "

@@ -1,474 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.1 on win32)" generated="20220121 22:38:28.982" rpa="false" schemaversion="2">
-<suite id="s1" name="Logintestfail" source="C:\Users\007\PycharmProjects\robot-test-login\Automation\logintestfail.robot">
-<kw name="Open browser login page" library="resource" type="SETUP">
+<robot generator="Robot 4.1.2 (Python 3.9.1 on win32)" generated="20220209 00:28:57.577" rpa="false" schemaversion="2">
+<suite id="s1" name="Login" source="C:\Users\007\PycharmProjects\robot-test-login\testcase\login\login.robot">
+<kw name="Open browser login page" library="open_website" type="SETUP">
 <kw name="Open Browser" library="Selenium2Library">
-<arg>${base_url}</arg>
-<arg>${browser}</arg>
+<arg>${base_url.phptravels}</arg>
+<arg>${browser.chrome}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220121 22:38:31.171" level="INFO">Opening browser 'chrome' to base url 'https://www.phptravels.net/login'.</msg>
-<status status="PASS" starttime="20220121 22:38:31.161" endtime="20220121 22:38:41.255"/>
+<msg timestamp="20220209 00:28:57.760" level="INFO">Opening browser 'chrome' to base url 'https://www.phptravels.net/login'.</msg>
+<status status="PASS" starttime="20220209 00:28:57.759" endtime="20220209 00:29:04.895"/>
 </kw>
 <kw name="Title Should Be" library="Selenium2Library">
 <arg>Login - PHPTRAVELS</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:41.266" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.255" endtime="20220121 22:38:41.267"/>
+<msg timestamp="20220209 00:29:04.904" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
+<status status="PASS" starttime="20220209 00:29:04.896" endtime="20220209 00:29:04.904"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:31.161" endtime="20220121 22:38:41.267"/>
+<status status="PASS" starttime="20220209 00:28:57.759" endtime="20220209 00:29:04.904"/>
 </kw>
-<test id="s1-t1" name="Invalid Username">
-<kw name="Login fail">
-<arg>aaaa@phptravels.com</arg>
-<arg>${Valid_Pass}</arg>
-<kw name="Type in username" library="resource">
-<arg>${usename}</arg>
+<test id="s1-t1" name="Scenario: Login Fail (Empty)">
+<kw name="GIVEN Login use empty to Dashbord" library="keyword_login" sourcename="Login use ${case} to Dashbord">
+<kw name="Type in username" library="login_page">
+<arg>${username.${case}}</arg>
 <kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=email</arg>
+<arg>${text_name}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:41.270" endtime="20220121 22:38:41.309"/>
+<status status="PASS" starttime="20220209 00:29:04.906" endtime="20220209 00:29:04.940"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
-<arg>name=email</arg>
-<arg>${usename}</arg>
+<arg>${text_name}</arg>
+<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:41.309" level="INFO">Typing text 'aaaa@phptravels.com' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.309" endtime="20220121 22:38:41.409"/>
+<msg timestamp="20220209 00:29:04.941" level="INFO">Typing text ' ' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220209 00:29:04.940" endtime="20220209 00:29:05.019"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:41.269" endtime="20220121 22:38:41.410"/>
+<status status="PASS" starttime="20220209 00:29:04.905" endtime="20220209 00:29:05.019"/>
 </kw>
-<kw name="Type in password" library="resource">
-<arg>${password}</arg>
+<kw name="Type in password" library="login_page">
+<arg>${password.${case}}</arg>
 <kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=password</arg>
+<arg>${text_pass}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:41.410" endtime="20220121 22:38:41.438"/>
+<status status="PASS" starttime="20220209 00:29:05.020" endtime="20220209 00:29:05.052"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
-<arg>name=password</arg>
+<arg>${text_pass}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:41.438" level="INFO">Typing text 'demouser' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.438" endtime="20220121 22:38:41.514"/>
+<msg timestamp="20220209 00:29:05.052" level="INFO">Typing text ' ' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20220209 00:29:05.052" endtime="20220209 00:29:05.145"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:41.410" endtime="20220121 22:38:41.515"/>
+<status status="PASS" starttime="20220209 00:29:05.019" endtime="20220209 00:29:05.145"/>
 </kw>
-<kw name="Submit Login" library="resource">
+<status status="PASS" starttime="20220209 00:29:04.905" endtime="20220209 00:29:05.145"/>
+</kw>
+<kw name="When Submit Login" library="login_page">
 <kw name="Click Element" library="Selenium2Library">
-<arg>//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]</arg>
+<arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:41.515" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.515" endtime="20220121 22:38:41.799"/>
+<msg timestamp="20220209 00:29:05.146" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
+<status status="PASS" starttime="20220209 00:29:05.146" endtime="20220209 00:29:05.227"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:41.515" endtime="20220121 22:38:41.799"/>
+<status status="PASS" starttime="20220209 00:29:05.146" endtime="20220209 00:29:05.227"/>
 </kw>
-<kw name="Error page" library="resource">
+<kw name="Then Found Error page" library="login_page">
 <kw name="Title Should Be" library="Selenium2Library">
 <arg>Login - PHPTRAVELS</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:41.805" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.800" endtime="20220121 22:38:41.805"/>
+<msg timestamp="20220209 00:29:05.232" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
+<status status="PASS" starttime="20220209 00:29:05.228" endtime="20220209 00:29:05.232"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:41.799" endtime="20220121 22:38:41.806"/>
+<status status="PASS" starttime="20220209 00:29:05.227" endtime="20220209 00:29:05.233"/>
 </kw>
-<kw name="Go to login page" library="resource" type="TEARDOWN">
-<kw name="Go To" library="Selenium2Library">
-<arg>${base_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220121 22:38:41.806" level="INFO">Opening url 'https://www.phptravels.net/login'</msg>
-<status status="PASS" starttime="20220121 22:38:41.806" endtime="20220121 22:38:41.955"/>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:41.960" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.955" endtime="20220121 22:38:41.960"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:41.806" endtime="20220121 22:38:41.960"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:41.269" endtime="20220121 22:38:41.960"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:41.267" endtime="20220121 22:38:41.961"/>
+<status status="PASS" starttime="20220209 00:29:04.904" endtime="20220209 00:29:05.233"/>
 </test>
-<test id="s1-t2" name="Invalid Password">
-<kw name="Login fail">
-<arg>${Valid_User}</arg>
-<arg>sssmouser</arg>
-<kw name="Type in username" library="resource">
-<arg>${usename}</arg>
+<test id="s1-t2" name="Scenario: Login Fail (invalid)">
+<kw name="GIVEN Login use invalid to Dashbord" library="keyword_login" sourcename="Login use ${case} to Dashbord">
+<kw name="Type in username" library="login_page">
+<arg>${username.${case}}</arg>
 <kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=email</arg>
+<arg>${text_name}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:41.964" endtime="20220121 22:38:41.989"/>
+<status status="PASS" starttime="20220209 00:29:05.238" endtime="20220209 00:29:05.260"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
-<arg>name=email</arg>
-<arg>${usename}</arg>
+<arg>${text_name}</arg>
+<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:41.989" level="INFO">Typing text 'user@phptravels.com' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20220121 22:38:41.989" endtime="20220121 22:38:42.074"/>
+<msg timestamp="20220209 00:29:05.260" level="INFO">Typing text 'aaaa@phptravels.com' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220209 00:29:05.260" endtime="20220209 00:29:05.332"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:41.964" endtime="20220121 22:38:42.074"/>
+<status status="PASS" starttime="20220209 00:29:05.237" endtime="20220209 00:29:05.333"/>
 </kw>
-<kw name="Type in password" library="resource">
-<arg>${password}</arg>
+<kw name="Type in password" library="login_page">
+<arg>${password.${case}}</arg>
 <kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=password</arg>
+<arg>${text_pass}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:42.075" endtime="20220121 22:38:42.098"/>
+<status status="PASS" starttime="20220209 00:29:05.334" endtime="20220209 00:29:05.351"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
-<arg>name=password</arg>
+<arg>${text_pass}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:42.099" level="INFO">Typing text 'sssmouser' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.098" endtime="20220121 22:38:42.181"/>
+<msg timestamp="20220209 00:29:05.351" level="INFO">Typing text 'sssmouser' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20220209 00:29:05.351" endtime="20220209 00:29:05.412"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:42.074" endtime="20220121 22:38:42.182"/>
+<status status="PASS" starttime="20220209 00:29:05.333" endtime="20220209 00:29:05.412"/>
 </kw>
-<kw name="Submit Login" library="resource">
+<status status="PASS" starttime="20220209 00:29:05.236" endtime="20220209 00:29:05.412"/>
+</kw>
+<kw name="When Submit Login" library="login_page">
 <kw name="Click Element" library="Selenium2Library">
-<arg>//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]</arg>
+<arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:42.182" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.182" endtime="20220121 22:38:42.413"/>
+<msg timestamp="20220209 00:29:05.413" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
+<status status="PASS" starttime="20220209 00:29:05.413" endtime="20220209 00:29:06.291"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:42.182" endtime="20220121 22:38:42.414"/>
+<status status="PASS" starttime="20220209 00:29:05.413" endtime="20220209 00:29:06.291"/>
 </kw>
-<kw name="Error page" library="resource">
+<kw name="Then Found Error page" library="login_page">
 <kw name="Title Should Be" library="Selenium2Library">
 <arg>Login - PHPTRAVELS</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:42.419" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.415" endtime="20220121 22:38:42.419"/>
+<msg timestamp="20220209 00:29:06.294" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
+<status status="PASS" starttime="20220209 00:29:06.291" endtime="20220209 00:29:06.294"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:42.414" endtime="20220121 22:38:42.419"/>
+<status status="PASS" starttime="20220209 00:29:06.291" endtime="20220209 00:29:06.294"/>
 </kw>
-<kw name="Go to login page" library="resource" type="TEARDOWN">
-<kw name="Go To" library="Selenium2Library">
-<arg>${base_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220121 22:38:42.420" level="INFO">Opening url 'https://www.phptravels.net/login'</msg>
-<status status="PASS" starttime="20220121 22:38:42.420" endtime="20220121 22:38:42.530"/>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:42.534" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.530" endtime="20220121 22:38:42.534"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:42.419" endtime="20220121 22:38:42.534"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:41.964" endtime="20220121 22:38:42.534"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:41.963" endtime="20220121 22:38:42.535"/>
+<status status="PASS" starttime="20220209 00:29:05.235" endtime="20220209 00:29:06.295"/>
 </test>
-<test id="s1-t3" name="Both Invalid">
-<kw name="Login fail">
-<arg>aaaa@phptravels.com</arg>
-<arg>demouser</arg>
-<kw name="Type in username" library="resource">
-<arg>${usename}</arg>
+<test id="s1-t3" name="Scenario: Login Success">
+<kw name="GIVEN Login use valid to Dashbord" library="keyword_login" sourcename="Login use ${case} to Dashbord">
+<kw name="Type in username" library="login_page">
+<arg>${username.${case}}</arg>
 <kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=email</arg>
+<arg>${text_name}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:42.552" endtime="20220121 22:38:42.576"/>
+<status status="PASS" starttime="20220209 00:29:06.297" endtime="20220209 00:29:06.330"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
-<arg>name=email</arg>
-<arg>${usename}</arg>
+<arg>${text_name}</arg>
+<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:42.577" level="INFO">Typing text 'aaaa@phptravels.com' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.577" endtime="20220121 22:38:42.664"/>
+<msg timestamp="20220209 00:29:06.330" level="INFO">Typing text 'user@phptravels.com' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220209 00:29:06.330" endtime="20220209 00:29:06.428"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:42.552" endtime="20220121 22:38:42.664"/>
+<status status="PASS" starttime="20220209 00:29:06.296" endtime="20220209 00:29:06.428"/>
 </kw>
-<kw name="Type in password" library="resource">
-<arg>${password}</arg>
+<kw name="Type in password" library="login_page">
+<arg>${password.${case}}</arg>
 <kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=password</arg>
+<arg>${text_pass}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:42.665" endtime="20220121 22:38:42.687"/>
+<status status="PASS" starttime="20220209 00:29:06.429" endtime="20220209 00:29:06.455"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
-<arg>name=password</arg>
+<arg>${text_pass}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:42.688" level="INFO">Typing text 'demouser' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.688" endtime="20220121 22:38:42.762"/>
+<msg timestamp="20220209 00:29:06.455" level="INFO">Typing text 'demouser' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20220209 00:29:06.455" endtime="20220209 00:29:06.541"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:42.664" endtime="20220121 22:38:42.763"/>
+<status status="PASS" starttime="20220209 00:29:06.428" endtime="20220209 00:29:06.541"/>
 </kw>
-<kw name="Submit Login" library="resource">
+<status status="PASS" starttime="20220209 00:29:06.296" endtime="20220209 00:29:06.541"/>
+</kw>
+<kw name="When Submit Login" library="login_page">
 <kw name="Click Element" library="Selenium2Library">
-<arg>//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]</arg>
+<arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:42.763" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
-<status status="PASS" starttime="20220121 22:38:42.763" endtime="20220121 22:38:43.002"/>
+<msg timestamp="20220209 00:29:06.542" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
+<status status="PASS" starttime="20220209 00:29:06.542" endtime="20220209 00:29:09.034"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:42.763" endtime="20220121 22:38:43.003"/>
+<status status="PASS" starttime="20220209 00:29:06.542" endtime="20220209 00:29:09.034"/>
 </kw>
-<kw name="Error page" library="resource">
+<kw name="Then Login Page to Dashbord page" library="susccess_login_page">
 <kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
+<arg>Dashboard - PHPTRAVELS</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:43.007" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.003" endtime="20220121 22:38:43.007"/>
+<msg timestamp="20220209 00:29:09.040" level="INFO">Page title is 'Dashboard - PHPTRAVELS'.</msg>
+<status status="PASS" starttime="20220209 00:29:09.035" endtime="20220209 00:29:09.040"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:43.003" endtime="20220121 22:38:43.007"/>
+<status status="PASS" starttime="20220209 00:29:09.034" endtime="20220209 00:29:09.040"/>
 </kw>
-<kw name="Go to login page" library="resource" type="TEARDOWN">
-<kw name="Go To" library="Selenium2Library">
-<arg>${base_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220121 22:38:43.008" level="INFO">Opening url 'https://www.phptravels.net/login'</msg>
-<status status="PASS" starttime="20220121 22:38:43.008" endtime="20220121 22:38:43.116"/>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:43.120" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.116" endtime="20220121 22:38:43.120"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.008" endtime="20220121 22:38:43.120"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:42.552" endtime="20220121 22:38:43.121"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:42.551" endtime="20220121 22:38:43.121"/>
-</test>
-<test id="s1-t4" name="Empty Username">
-<kw name="Login fail">
-<arg>${EMPTY}</arg>
-<arg>${Valid_Pass}</arg>
-<kw name="Type in username" library="resource">
-<arg>${usename}</arg>
-<kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=email</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:43.124" endtime="20220121 22:38:43.148"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>name=email</arg>
-<arg>${usename}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:43.148" level="INFO">Typing text '' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.148" endtime="20220121 22:38:43.216"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.123" endtime="20220121 22:38:43.217"/>
-</kw>
-<kw name="Type in password" library="resource">
-<arg>${password}</arg>
-<kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=password</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:43.217" endtime="20220121 22:38:43.239"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>name=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:43.240" level="INFO">Typing text 'demouser' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.239" endtime="20220121 22:38:43.327"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.217" endtime="20220121 22:38:43.327"/>
-</kw>
-<kw name="Submit Login" library="resource">
-<kw name="Click Element" library="Selenium2Library">
-<arg>//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:43.327" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.327" endtime="20220121 22:38:43.440"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.327" endtime="20220121 22:38:43.440"/>
-</kw>
-<kw name="Error page" library="resource">
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:43.446" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.440" endtime="20220121 22:38:43.446"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.440" endtime="20220121 22:38:43.446"/>
-</kw>
-<kw name="Go to login page" library="resource" type="TEARDOWN">
-<kw name="Go To" library="Selenium2Library">
-<arg>${base_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220121 22:38:43.447" level="INFO">Opening url 'https://www.phptravels.net/login'</msg>
-<status status="PASS" starttime="20220121 22:38:43.447" endtime="20220121 22:38:43.563"/>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:43.573" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.563" endtime="20220121 22:38:43.573"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.446" endtime="20220121 22:38:43.573"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.123" endtime="20220121 22:38:43.573"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.122" endtime="20220121 22:38:43.574"/>
-</test>
-<test id="s1-t5" name="Empty Password">
-<kw name="Login fail">
-<arg>${Valid_User}</arg>
-<arg>${EMPTY}</arg>
-<kw name="Type in username" library="resource">
-<arg>${usename}</arg>
-<kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=email</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:43.577" endtime="20220121 22:38:43.603"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>name=email</arg>
-<arg>${usename}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:43.603" level="INFO">Typing text 'user@phptravels.com' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.603" endtime="20220121 22:38:43.689"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.576" endtime="20220121 22:38:43.689"/>
-</kw>
-<kw name="Type in password" library="resource">
-<arg>${password}</arg>
-<kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=password</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:43.690" endtime="20220121 22:38:43.713"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>name=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:43.713" level="INFO">Typing text '' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.713" endtime="20220121 22:38:43.778"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.689" endtime="20220121 22:38:43.779"/>
-</kw>
-<kw name="Submit Login" library="resource">
-<kw name="Click Element" library="Selenium2Library">
-<arg>//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:43.779" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.779" endtime="20220121 22:38:43.986"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.779" endtime="20220121 22:38:43.986"/>
-</kw>
-<kw name="Error page" library="resource">
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:43.991" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:43.987" endtime="20220121 22:38:43.991"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.986" endtime="20220121 22:38:43.991"/>
-</kw>
-<kw name="Go to login page" library="resource" type="TEARDOWN">
-<kw name="Go To" library="Selenium2Library">
-<arg>${base_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220121 22:38:43.992" level="INFO">Opening url 'https://www.phptravels.net/login'</msg>
-<status status="PASS" starttime="20220121 22:38:43.992" endtime="20220121 22:38:44.133"/>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:44.144" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:44.134" endtime="20220121 22:38:44.144"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.991" endtime="20220121 22:38:44.145"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.576" endtime="20220121 22:38:44.145"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:43.575" endtime="20220121 22:38:44.145"/>
-</test>
-<test id="s1-t6" name="Both Empty">
-<kw name="Login fail">
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<kw name="Type in username" library="resource">
-<arg>${usename}</arg>
-<kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=email</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:44.148" endtime="20220121 22:38:44.168"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>name=email</arg>
-<arg>${usename}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:44.169" level="INFO">Typing text '' into text field 'name=email'.</msg>
-<status status="PASS" starttime="20220121 22:38:44.169" endtime="20220121 22:38:44.228"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.147" endtime="20220121 22:38:44.228"/>
-</kw>
-<kw name="Type in password" library="resource">
-<arg>${password}</arg>
-<kw name="Element Should Be Enabled" library="Selenium2Library">
-<arg>name=password</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220121 22:38:44.228" endtime="20220121 22:38:44.249"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>name=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:44.249" level="INFO">Typing text '' into text field 'name=password'.</msg>
-<status status="PASS" starttime="20220121 22:38:44.249" endtime="20220121 22:38:44.307"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.228" endtime="20220121 22:38:44.308"/>
-</kw>
-<kw name="Submit Login" library="resource">
-<kw name="Click Element" library="Selenium2Library">
-<arg>//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220121 22:38:44.308" level="INFO">Clicking element '//*[@class="btn btn-default btn-lg btn-block effect ladda-button waves-effect"]'.</msg>
-<status status="PASS" starttime="20220121 22:38:44.308" endtime="20220121 22:38:44.353"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.308" endtime="20220121 22:38:44.353"/>
-</kw>
-<kw name="Error page" library="resource">
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:44.359" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:44.354" endtime="20220121 22:38:44.359"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.354" endtime="20220121 22:38:44.359"/>
-</kw>
-<kw name="Go to login page" library="resource" type="TEARDOWN">
-<kw name="Go To" library="Selenium2Library">
-<arg>${base_url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220121 22:38:44.361" level="INFO">Opening url 'https://www.phptravels.net/login'</msg>
-<status status="PASS" starttime="20220121 22:38:44.360" endtime="20220121 22:38:44.482"/>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<arg>Login - PHPTRAVELS</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220121 22:38:44.490" level="INFO">Page title is 'Login - PHPTRAVELS'.</msg>
-<status status="PASS" starttime="20220121 22:38:44.482" endtime="20220121 22:38:44.491"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.360" endtime="20220121 22:38:44.491"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.146" endtime="20220121 22:38:44.491"/>
-</kw>
-<status status="PASS" starttime="20220121 22:38:44.146" endtime="20220121 22:38:44.491"/>
+<status status="PASS" starttime="20220209 00:29:06.295" endtime="20220209 00:29:09.040"/>
 </test>
 <kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220121 22:38:44.493" endtime="20220121 22:38:46.627"/>
+<status status="PASS" starttime="20220209 00:29:09.041" endtime="20220209 00:29:11.174"/>
 </kw>
-<status status="PASS" starttime="20220121 22:38:28.989" endtime="20220121 22:38:46.627"/>
+<status status="PASS" starttime="20220209 00:28:57.578" endtime="20220209 00:29:11.174"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Logintestfail">Logintestfail</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Login">Login</stat>
 </suite>
 </statistics>
 <errors>
